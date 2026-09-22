@@ -150,7 +150,7 @@ class Test_ACF_Field_Group_Functions extends BaseTestCase {
 		);
 
 		$meta = acf_get_field_group_post_meta_for_export( $field_group );
-		$code = html_entity_decode( acf_export_field_groups_post_meta_as_php( array( $field_group ) ) );
+		$code = html_entity_decode( acf_export_field_groups_post_meta_as_php( array( $field_group ) ), ENT_QUOTES, 'UTF-8' );
 
 		$this->assertSame( true, $meta['book']['book_title']['single'] );
 		$this->assertSame( 'string', $meta['book']['book_title']['type'] );
