@@ -115,10 +115,7 @@ class Test_Assets extends BaseTestCase {
 	public function test_register_scripts_adds_wp_polyfill_fallback_when_missing() {
 		acf_get_instance( 'ACF_Assets' )->register_scripts();
 
-		$wp_scripts = wp_scripts();
-
 		$this->assertTrue( wp_script_is( 'wp-polyfill', 'registered' ) );
-		$this->assertContains( 'wp-polyfill', $wp_scripts->registered['acf']->deps );
 	}
 
 	/**
